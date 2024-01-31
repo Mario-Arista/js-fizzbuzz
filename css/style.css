@@ -25,7 +25,8 @@ h1 {
 
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    margin-bottom: 20px;
+    max-width: 1000px;
 
 }
 
