@@ -1,5 +1,8 @@
 const containerElement = document.querySelector("#container");
 
+
+// WITHOUT APPEND
+
 // for (let i = 1; i <= 100; i++ ) {
     
 //     if (i % 5 == 0 && i % 3 == 0) {
@@ -16,26 +19,31 @@ const containerElement = document.querySelector("#container");
 
 // }
 
-for (let i = 1; i <= 100; i++ ) {
+// WITH APPEND
+
+for( i=1; i<=100; i++) {
 
     const newElement = document.createElement("div");
-    
-    newElement.className = "square";
-    newElement.style.backgroundColor = "#3189B2"; 
+    containerElement.append(newElement);
+    newElement.className = "square blue";
+    newElement.innerHTML = i;
     
 
-    if (i % 3 == 0 && i % 5 == 0){
-        newElement.className += " red";
-        
+    if (i % 5 == 0 && i % 3 == 0) {
+        newElement.className = "square red";
+        newElement.innerText = "fizzbuzz";
+    
     } else if (i % 5 == 0) {
-        newElement.className += " yellow";
-        
-    } else if (i % 3 == 0)  {
-        newElement.className += " green";  
-         
-    } else {
-        containerElement.append(newElement);
-        newElement.innerHTML = i;
-    }
+        newElement.className = "square yellow";
+        newElement.innerText = "buzz";
 
+    } else if (i % 3 == 0) {
+        newElement.className = "square green";
+        newElement.innerText = "fizz";
+
+    } 
+        
 }
+
+
+
